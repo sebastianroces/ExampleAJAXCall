@@ -1,0 +1,23 @@
+Front End: 
+
+$.ajax({
+    type: "POST",
+    url: '/Default.aspx/TestMethod',
+    data: '{message: "Test_Me" }',
+    contentType: "application/json; charset=utf-8",
+    success: function (data) {
+        console.log(data);
+    },
+    failure: function (response) {
+        alert(response.d);
+    }
+});
+
+
+Back End: 
+
+[WebMethod]
+public static string TestMethod(string message)
+{
+     return "The message" + message;
+}
